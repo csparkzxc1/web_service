@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FAF7F2">
+
+<title>2026 4대보험 계산기 | 근로자·사업주 부담 동시 - 월급플러스</title>
+<meta name="description" content="2026년 4대보험(국민연금·건강보험·고용보험·산재보험) 자동 계산. 근로자와 사업주 부담금을 한눈에 비교하고 월 보험료를 확인하세요.">
+<meta name="keywords" content="4대보험 계산기, 2026 4대보험, 국민연금 계산, 건강보험 계산, 고용보험 계산, 산재보험, 사업주 부담, 근로자 부담">
+<meta name="author" content="월급플러스">
+<link rel="canonical" href="https://web-service-omega.vercel.app/tools/insurance.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="2026 4대보험 계산기 | 월급플러스">
+<meta property="og:description" content="근로자와 사업주 부담금을 한눈에 비교">
+<meta property="og:image" content="https://web-service-omega.vercel.app/og-image.png">
+<meta property="og:url" content="https://web-service-omega.vercel.app/tools/insurance.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="월급플러스">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2026 4대보험 계산기">
+<meta name="twitter:description" content="근로자·사업주 부담 한눈에 비교">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"월급플러스 4대보험 계산기","description":"2026년 4대보험 근로자·사업주 부담금 자동 계산","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"},"inLanguage":"ko-KR"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"4대보험에는 어떤 보험이 포함되나요?","acceptedAnswer":{"@type":"Answer","text":"국민연금, 건강보험(장기요양보험 포함), 고용보험, 산재보험 4가지입니다. 산재보험은 사업주가 100% 부담하고, 나머지 3개는 근로자와 사업주가 분담합니다."}},
+  {"@type":"Question","name":"국민연금 상한액은 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"2026년 기준 국민연금 기준소득월액 상한액은 약 590만원입니다. 월 소득이 590만원을 초과해도 보험료는 590만원 기준으로 부과되어 본인 부담은 약 26만 5천원이 최대치입니다."}},
+  {"@type":"Question","name":"산재보험은 왜 사업주만 부담하나요?","acceptedAnswer":{"@type":"Answer","text":"산재보험은 업무상 재해 보상을 위한 보험으로 사업주의 무과실 책임을 보상하는 성격이라 근로자 부담 없이 사업주가 전액 부담합니다. 업종별로 0.7%~18.6%로 요율이 다릅니다."}}
+]}
+</script>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D94A1F'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='serif' font-size='62' font-weight='500' fill='white'%3E₩%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #FAF7F2; --bg-card: #FFFFFF; --bg-soft: #F2EDE4; --bg-deep: #1A1815;
+    --ink: #1A1815; --ink-soft: #5C5852; --ink-mute: #8E8A82;
+    --accent: #D94A1F; --accent-soft: #FBE8E0;
+    --line: #E8E2D5; --line-strong: #D4CDB8; --green: #2D7A4F; --green-soft: #E5F3EC;
+    --shadow-md: 0 1px 2px rgba(26,24,21,0.04), 0 8px 24px rgba(26,24,21,0.06);
+    --shadow-lg: 0 4px 12px rgba(26,24,21,0.08), 0 24px 48px rgba(26,24,21,0.08);
+    --radius: 16px; --radius-lg: 24px;
+  }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+    background: var(--bg); color: var(--ink); line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(ellipse 800px 600px at 0% -10%, rgba(217,74,31,0.05) 0%, transparent 50%), radial-gradient(ellipse 600px 800px at 100% 100%, rgba(45,122,79,0.03) 0%, transparent 50%);
+    min-height: 100vh; overflow-x: hidden;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 24px 20px 80px; }
+  .nav { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; font-size: 13px; }
+  .nav a { color: var(--ink-soft); text-decoration: none; padding: 6px 10px; border-radius: 8px; }
+  .nav a:hover { background: var(--bg-soft); color: var(--accent); }
+  .nav .sep { color: var(--ink-mute); }
+  .nav .current { color: var(--ink); font-weight: 600; }
+  header { padding: 16px 0 24px; }
+  .updated-pill { display: inline-block; font-size: 11px; background: var(--accent-soft); color: var(--accent); padding: 5px 11px; border-radius: 100px; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 16px; }
+  h1 { font-family: 'Fraunces', serif; font-size: clamp(34px, 8vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 14px; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .subtitle { font-size: 16px; color: var(--ink-soft); max-width: 480px; line-height: 1.55; }
+  .calc-card { background: var(--bg-card); border-radius: var(--radius-lg); padding: 28px 24px; margin-top: 24px; box-shadow: var(--shadow-md); border: 1px solid var(--line); }
+  .input-group { margin-bottom: 18px; }
+  .input-group:last-child { margin-bottom: 0; }
+  label { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; font-weight: 600; color: var(--ink-soft); margin-bottom: 8px; }
+  label .helper { font-size: 11px; font-weight: 400; color: var(--ink-mute); }
+  .input-wrap { position: relative; }
+  input[type="number"], input[type="text"], select {
+    width: 100%; padding: 16px 60px 16px 18px; font-size: 18px; font-weight: 600; font-family: inherit;
+    border: 1.5px solid var(--line); border-radius: 14px; background: var(--bg); color: var(--ink);
+    transition: all 0.2s; -webkit-appearance: none; appearance: none; font-variant-numeric: tabular-nums;
+  }
+  select { padding-right: 42px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%238E8A82' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 18px center; }
+  input:focus, select:focus { outline: none; border-color: var(--accent); background: var(--bg-card); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .input-suffix { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-size: 14px; color: var(--ink-mute); pointer-events: none; font-weight: 500; }
+  .help-text { font-size: 12px; color: var(--ink-mute); margin-top: 6px; line-height: 1.5; }
+
+  /* Side by side result cards */
+  .result-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+  .result-card { padding: 24px 20px; border-radius: 18px; position: relative; overflow: hidden; }
+  .result-card.employee { background: linear-gradient(135deg, var(--bg-deep) 0%, #2A2622 100%); color: white; }
+  .result-card.employer { background: linear-gradient(135deg, #2D7A4F 0%, #1F5A38 100%); color: white; }
+  .result-card::before { content: ''; position: absolute; top: -30%; right: -20%; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.06); pointer-events: none; }
+  .result-label { font-size: 11px; color: rgba(255,255,255,0.65); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; margin-bottom: 6px; position: relative; z-index: 1; }
+  .result-amount { font-family: 'Fraunces', serif; font-size: clamp(28px, 7vw, 36px); font-weight: 500; line-height: 1; letter-spacing: -0.02em; position: relative; z-index: 1; font-variant-numeric: tabular-nums; }
+  .result-amount .won { font-family: 'Pretendard Variable', sans-serif; font-size: 0.5em; font-weight: 400; color: rgba(255,255,255,0.7); margin-left: 4px; }
+
+  .total-result { margin-top: 12px; padding: 18px 20px; background: var(--bg-soft); border-radius: 14px; display: flex; justify-content: space-between; align-items: center; }
+  .total-label { font-size: 13px; color: var(--ink-soft); font-weight: 600; }
+  .total-value { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  /* Breakdown table */
+  .insurance-table { margin-top: 28px; background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .insurance-row { display: grid; grid-template-columns: 1.6fr 1fr 1fr; padding: 14px 16px; border-bottom: 1px solid var(--line); font-size: 13px; align-items: center; font-variant-numeric: tabular-nums; gap: 8px; }
+  .insurance-row:last-child { border-bottom: none; }
+  .insurance-row.head { background: var(--bg-soft); font-size: 11px; color: var(--ink-soft); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .insurance-row.total-row { background: var(--bg-soft); font-weight: 700; }
+  .insurance-row .name { display: flex; flex-direction: column; gap: 2px; }
+  .insurance-row .name-main { font-weight: 600; color: var(--ink); }
+  .insurance-row .name-sub { font-size: 10px; color: var(--ink-mute); font-weight: 400; }
+  .insurance-row .col-amount { text-align: right; font-weight: 600; color: var(--ink); }
+  .insurance-row .col-amount.muted { color: var(--ink-mute); }
+
+  .ad-slot { margin: 32px 0; padding: 24px 20px; background: var(--bg-soft); border-radius: var(--radius); text-align: center; border: 1px dashed var(--line-strong); color: var(--ink-mute); font-size: 11px; min-height: 110px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .ad-slot small { text-transform: none; letter-spacing: 0; font-size: 11px; color: var(--ink-mute); }
+
+  .info-section { margin-top: 48px; }
+  .section-title { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 500; margin-bottom: 6px; letter-spacing: -0.015em; }
+  .section-desc { font-size: 14px; color: var(--ink-soft); margin-bottom: 20px; }
+  .info-section h3 { font-size: 17px; font-weight: 700; margin-top: 24px; margin-bottom: 8px; }
+  .info-section p { font-size: 15px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 12px; }
+
+  .rate-table { width: 100%; margin-top: 12px; border-collapse: separate; border-spacing: 0; background: var(--bg-card); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+  .rate-table th, .rate-table td { padding: 12px 14px; text-align: left; font-size: 13px; border-bottom: 1px solid var(--line); }
+  .rate-table th { background: var(--bg-soft); font-weight: 700; font-size: 11px; color: var(--ink-soft); letter-spacing: 0.04em; text-transform: uppercase; }
+  .rate-table tr:last-child td { border-bottom: none; }
+  .rate-table td:nth-child(2), .rate-table td:nth-child(3) { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  .tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
+  .tool-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 16px; text-decoration: none; color: var(--ink); transition: all 0.2s; display: flex; flex-direction: column; gap: 4px; }
+  .tool-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .tool-card .tool-icon { font-size: 20px; margin-bottom: 6px; }
+  .tool-card .tool-name { font-weight: 700; font-size: 14px; }
+  .tool-card .tool-desc { font-size: 12px; color: var(--ink-mute); }
+
+  details.faq-item { border-bottom: 1px solid var(--line); padding: 18px 0; cursor: pointer; }
+  details.faq-item summary { font-weight: 600; font-size: 15px; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  details.faq-item summary::-webkit-details-marker { display: none; }
+  details.faq-item summary::after { content: '+'; font-size: 22px; color: var(--ink-mute); font-weight: 300; transition: transform 0.2s; flex-shrink: 0; }
+  details.faq-item[open] summary::after { transform: rotate(45deg); }
+  details.faq-item .faq-a { font-size: 14px; color: var(--ink-soft); line-height: 1.7; margin-top: 12px; }
+
+  .toast { position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--ink); color: white; padding: 12px 20px; border-radius: 100px; font-size: 14px; font-weight: 500; box-shadow: var(--shadow-lg); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); z-index: 100; pointer-events: none; }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); text-align: center; font-size: 12px; color: var(--ink-mute); line-height: 1.7; }
+  footer .footer-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 12px; }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+
+  @media (max-width: 480px) { .calc-card { padding: 24px 18px; } .result-pair { grid-template-columns: 1fr; } .tools-grid { grid-template-columns: 1fr; } .insurance-row { font-size: 12px; padding: 12px 14px; } }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <nav class="nav">
+    <a href="/">월급플러스</a>
+    <span class="sep">›</span>
+    <span class="current">4대보험 계산기</span>
+  </nav>
+
+  <header>
+    <span class="updated-pill">2026 요율 반영</span>
+    <h1>4대보험,<br><em>누가 얼마를</em> 내나?</h1>
+    <p class="subtitle">월급만 입력하면 근로자와 사업주가 각각 부담하는 4대보험료를 한눈에 비교합니다.</p>
+  </header>
+
+  <main>
+
+    <div class="calc-card">
+
+      <div class="input-group">
+        <label for="monthly-salary">
+          <span>월 급여 (세전)</span>
+          <span class="helper">비과세 제외 금액</span>
+        </label>
+        <div class="input-wrap">
+          <input type="text" id="monthly-salary" placeholder="예: 300" inputmode="numeric">
+          <span class="input-suffix">만원</span>
+        </div>
+        <div class="help-text">기본급 + 각종 수당 합계 (비과세 식대 등 제외).</div>
+      </div>
+
+      <div class="input-group">
+        <label for="employee-count">
+          <span>회사 규모</span>
+          <span class="helper">고용·산재보험 요율 결정</span>
+        </label>
+        <select id="employee-count">
+          <option value="under150">150인 미만 사업장</option>
+          <option value="150to1000">150인 ~ 1,000인 사업장</option>
+          <option value="over1000">1,000인 이상 또는 국가·지자체</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="industry">
+          <span>업종 (산재보험)</span>
+          <span class="helper">평균 1.4% 적용</span>
+        </label>
+        <select id="industry">
+          <option value="0.007">금융·보험·정보서비스 (0.7%)</option>
+          <option value="0.009">교육·연구·전문서비스 (0.9%)</option>
+          <option value="0.014" selected>일반 사무·도소매·음식업 (1.4%)</option>
+          <option value="0.020">제조업 (2.0%)</option>
+          <option value="0.038">건설업 (3.8%)</option>
+          <option value="0.058">광업·임업 (5.8%)</option>
+        </select>
+        <div class="help-text">정확한 요율은 근로복지공단 또는 사업장별 고시를 확인하세요.</div>
+      </div>
+
+      <div class="result-pair">
+        <div class="result-card employee">
+          <div class="result-label">근로자 부담</div>
+          <div class="result-amount" id="employee-total">0<span class="won">원</span></div>
+        </div>
+        <div class="result-card employer">
+          <div class="result-label">사업주 부담</div>
+          <div class="result-amount" id="employer-total">0<span class="won">원</span></div>
+        </div>
+      </div>
+
+      <div class="total-result">
+        <span class="total-label">월 총 보험료</span>
+        <span class="total-value" id="grand-total">0원</span>
+      </div>
+
+      <div class="insurance-table">
+        <div class="insurance-row head">
+          <span>보험 종류</span>
+          <span style="text-align:right">근로자</span>
+          <span style="text-align:right">사업주</span>
+        </div>
+        <div class="insurance-row">
+          <span class="name"><span class="name-main">국민연금</span><span class="name-sub">각 4.5%</span></span>
+          <span class="col-amount" id="np-emp">0원</span>
+          <span class="col-amount" id="np-er">0원</span>
+        </div>
+        <div class="insurance-row">
+          <span class="name"><span class="name-main">건강보험</span><span class="name-sub">각 3.545%</span></span>
+          <span class="col-amount" id="hi-emp">0원</span>
+          <span class="col-amount" id="hi-er">0원</span>
+        </div>
+        <div class="insurance-row">
+          <span class="name"><span class="name-main">장기요양보험</span><span class="name-sub">건보 × 12.95%</span></span>
+          <span class="col-amount" id="ltc-emp">0원</span>
+          <span class="col-amount" id="ltc-er">0원</span>
+        </div>
+        <div class="insurance-row">
+          <span class="name"><span class="name-main">고용보험</span><span class="name-sub" id="ei-rate">근 0.9% / 사 1.15%</span></span>
+          <span class="col-amount" id="ei-emp">0원</span>
+          <span class="col-amount" id="ei-er">0원</span>
+        </div>
+        <div class="insurance-row">
+          <span class="name"><span class="name-main">산재보험</span><span class="name-sub">사업주 100%</span></span>
+          <span class="col-amount muted">0원</span>
+          <span class="col-amount" id="ai-er">0원</span>
+        </div>
+        <div class="insurance-row total-row">
+          <span class="name"><span class="name-main">합계</span></span>
+          <span class="col-amount" id="emp-sum">0원</span>
+          <span class="col-amount" id="er-sum">0원</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-slot">Google AdSense 영역<small>승인 후 디스플레이 광고 코드 삽입</small></div>
+
+    <section class="info-section">
+      <h2 class="section-title">2026년 4대보험 요율표</h2>
+
+      <table class="rate-table">
+        <thead><tr><th>항목</th><th>근로자</th><th>사업주</th></tr></thead>
+        <tbody>
+          <tr><td>국민연금</td><td>4.5%</td><td>4.5%</td></tr>
+          <tr><td>건강보험</td><td>3.545%</td><td>3.545%</td></tr>
+          <tr><td>장기요양보험 (건보료의)</td><td>12.95%</td><td>12.95%</td></tr>
+          <tr><td>고용보험 (실업급여)</td><td>0.9%</td><td>0.9%</td></tr>
+          <tr><td>고용보험 (고용안정·150인 미만)</td><td>-</td><td>0.25%</td></tr>
+          <tr><td>산재보험 (업종별)</td><td>-</td><td>0.7~18.6%</td></tr>
+        </tbody>
+      </table>
+
+      <h3>국민연금 상한액</h3>
+      <p>2026년 기준 국민연금 기준소득월액 상한은 약 590만원이며, 이를 초과하는 소득에는 추가 보험료가 부과되지 않습니다. 본인 부담 최대치는 약 26만 5천원입니다.</p>
+
+      <h3>건강보험과 장기요양보험</h3>
+      <p>건강보험은 보수월액의 3.545%, 장기요양보험은 건강보험료의 12.95%를 추가로 부담합니다. 근로자와 사업주가 각각 절반씩 부담합니다.</p>
+
+      <h3>고용보험은 실업급여 + 고용안정</h3>
+      <p>실업급여 분담분(각 0.9%)에 더해, 사업주는 고용안정·직업능력개발 사업주 부담분(150인 미만 0.25%, 1,000인 이상 0.85%)을 추가 부담합니다.</p>
+
+      <h3>산재보험은 사업주 100% 부담</h3>
+      <p>산재보험은 업무상 재해 보상을 위한 보험이라 근로자 부담이 없습니다. 업종에 따라 0.7%(금융·보험)에서 18.6%(광업)까지 차이가 큽니다.</p>
+    </section>
+
+    <section class="info-section">
+      <h2 class="section-title">함께 쓰면 좋은 도구</h2>
+      <div class="tools-grid">
+        <a class="tool-card" href="/"><span class="tool-icon">💰</span><span class="tool-name">연봉 실수령액</span><span class="tool-desc">세후 월급 계산</span></a>
+        <a class="tool-card" href="/tools/severance.html"><span class="tool-icon">🏖️</span><span class="tool-name">퇴직금 계산기</span><span class="tool-desc">평균임금 기준</span></a>
+        <a class="tool-card" href="/tools/hourly.html"><span class="tool-icon">⏰</span><span class="tool-name">시급 계산기</span><span class="tool-desc">주휴수당 자동 포함</span></a>
+        <a class="tool-card" href="/tools/annual-leave.html"><span class="tool-icon">📅</span><span class="tool-name">연차수당 계산기</span><span class="tool-desc">미사용 연차 환산</span></a>
+      </div>
+    </section>
+
+    <div class="ad-slot">Google AdSense 영역<small>인아티클 또는 반응형 광고</small></div>
+
+    <section class="info-section">
+      <h2 class="section-title">자주 묻는 질문</h2>
+
+      <details class="faq-item">
+        <summary>알바도 4대보험에 가입해야 하나요?</summary>
+        <div class="faq-a">월 60시간 이상 근무하고 1개월 이상 고용된 근로자는 4대보험 의무가입 대상입니다. 단시간 근로자(주 15시간 미만)는 일부 면제될 수 있습니다.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>5인 미만 사업장도 4대보험 가입 의무가 있나요?</summary>
+        <div class="faq-a">네, 사업장 규모와 무관하게 1인이라도 근로자를 고용하면 4대보험 모두 가입 의무가 있습니다. 5인 미만 사업장 적용 제외는 근로기준법상 일부 조항(연장수당 등)에만 해당합니다.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>건강보험료 정산은 무엇인가요?</summary>
+        <div class="faq-a">매년 4월에 전년도 연봉 확정 후, 실제 보수와 부과된 보험료의 차액을 정산합니다. 연봉이 올랐다면 추가 납부, 내려갔다면 환급받습니다.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>국민연금을 60세까지 안 내도 되나요?</summary>
+        <div class="faq-a">국민연금은 만 18세부터 만 60세 미만까지 가입 의무가 있으며, 직장가입자가 아닌 경우 지역가입자로 자동 전환됩니다. 60세 이상도 임의계속가입을 통해 추가 납부 가능합니다.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>두 곳에서 일하면 보험료를 두 번 내나요?</summary>
+        <div class="faq-a">국민연금·건강보험은 각 사업장에서 보수에 비례해 분담 납부합니다. 다만 국민연금은 두 사업장 합산 보수가 상한액을 초과하면 한도 내에서만 부과됩니다. 고용보험은 주된 사업장에서만 가입합니다.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>퇴사하면 건강보험은 어떻게 되나요?</summary>
+        <div class="faq-a">퇴사 시 직장가입자 자격이 상실되어 지역가입자로 전환되며, 보험료가 변동될 수 있습니다. 임의계속가입을 신청하면 최대 36개월간 직장 보험료(절반 사업주 부담분 제외)로 유지 가능합니다.</div>
+      </details>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">홈으로</a>
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+    </div>
+    © 2026 월급플러스 (MWAGE)<br>
+    본 계산 결과는 참고용입니다.
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">결과가 클립보드에 복사되었어요</div>
+
+<script>
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const fmt = n => Math.round(n).toLocaleString('ko-KR') + '원';
+  const fmtBig = n => Math.round(n).toLocaleString('ko-KR');
+  const toNum = el => Number((el.value || '0').replace(/[^\d]/g, ''));
+
+  const RATES = {
+    pension: 0.045,
+    pensionMaxBase: 5900000,
+    health: 0.03545,
+    care: 0.1295,
+    employmentEmployee: 0.009,
+    employmentEmployerByCompany: {
+      'under150': 0.0115,    // 0.9% + 0.25%
+      '150to1000': 0.0155,   // 0.9% + 0.65%
+      'over1000': 0.0175,    // 0.9% + 0.85%
+    }
+  };
+
+  function calc() {
+    const monthlySalary = toNum($('monthly-salary')) * 10000;
+    const companySize = $('employee-count').value;
+    const industryRate = Number($('industry').value);
+
+    if (monthlySalary === 0) {
+      ['employee-total','employer-total','grand-total','np-emp','np-er','hi-emp','hi-er','ltc-emp','ltc-er','ei-emp','ei-er','ai-er','emp-sum','er-sum'].forEach(id => {
+        const el = $(id);
+        if (id.includes('total')) el.innerHTML = '0<span class="won">원</span>';
+        else if (id === 'grand-total') el.textContent = '0원';
+        else el.textContent = '0원';
+      });
+      $('grand-total').textContent = '0원';
+      return;
+    }
+
+    // 국민연금 (상한 적용)
+    const pensionBase = Math.min(monthlySalary, RATES.pensionMaxBase);
+    const pensionEmp = pensionBase * RATES.pension;
+    const pensionEr = pensionBase * RATES.pension;
+
+    // 건강보험
+    const healthEmp = monthlySalary * RATES.health;
+    const healthEr = monthlySalary * RATES.health;
+
+    // 장기요양 (건강보험의 12.95%, 양쪽 분담)
+    const careEmp = healthEmp * RATES.care;
+    const careEr = healthEr * RATES.care;
+
+    // 고용보험
+    const employmentEmp = monthlySalary * RATES.employmentEmployee;
+    const employmentErRate = RATES.employmentEmployerByCompany[companySize];
+    const employmentEr = monthlySalary * employmentErRate;
+
+    // 산재보험 (사업주 100%)
+    const accidentEr = monthlySalary * industryRate;
+
+    // 합계
+    const employeeTotal = pensionEmp + healthEmp + careEmp + employmentEmp;
+    const employerTotal = pensionEr + healthEr + careEr + employmentEr + accidentEr;
+    const grandTotal = employeeTotal + employerTotal;
+
+    // UI
+    $('employee-total').innerHTML = fmtBig(employeeTotal) + '<span class="won">원</span>';
+    $('employer-total').innerHTML = fmtBig(employerTotal) + '<span class="won">원</span>';
+    $('grand-total').textContent = fmt(grandTotal);
+
+    $('np-emp').textContent = fmt(pensionEmp);
+    $('np-er').textContent = fmt(pensionEr);
+    $('hi-emp').textContent = fmt(healthEmp);
+    $('hi-er').textContent = fmt(healthEr);
+    $('ltc-emp').textContent = fmt(careEmp);
+    $('ltc-er').textContent = fmt(careEr);
+    $('ei-emp').textContent = fmt(employmentEmp);
+    $('ei-er').textContent = fmt(employmentEr);
+    $('ai-er').textContent = fmt(accidentEr);
+    $('emp-sum').textContent = fmt(employeeTotal);
+    $('er-sum').textContent = fmt(employerTotal);
+
+    // 고용보험 요율 표시 업데이트
+    const erPctText = (employmentErRate * 100).toFixed(2);
+    $('ei-rate').textContent = `근 0.9% / 사 ${erPctText}%`;
+  }
+
+  function attachInputFormat(el) {
+    el.addEventListener('input', e => {
+      const raw = e.target.value.replace(/[^\d]/g, '');
+      e.target.value = raw ? Number(raw).toLocaleString('ko-KR') : '';
+      calc();
+    });
+  }
+  attachInputFormat($('monthly-salary'));
+  $('employee-count').addEventListener('change', calc);
+  $('industry').addEventListener('change', calc);
+
+  // Default
+  $('monthly-salary').value = '300';
+  calc();
+</script>
+
+</body>
+</html>
