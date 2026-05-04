@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -29,7 +29,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
   {"@type":"Question","name":"4대보험에는 어떤 보험이 포함되나요?","acceptedAnswer":{"@type":"Answer","text":"국민연금, 건강보험(장기요양보험 포함), 고용보험, 산재보험 4가지입니다. 산재보험은 사업주가 100% 부담하고, 나머지 3개는 근로자와 사업주가 분담합니다."}},
-  {"@type":"Question","name":"국민연금 상한액은 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"2026년 기준 국민연금 기준소득월액 상한액은 약 590만원입니다. 월 소득이 590만원을 초과해도 보험료는 590만원 기준으로 부과되어 본인 부담은 약 26만 5천원이 최대치입니다."}},
+  {"@type":"Question","name":"국민연금 상한액은 얼마인가요?","acceptedAnswer":{"@type":"Answer","text":"2026년 기준 국민연금 기준소득월액 상한액은 2026년 7월부터 659만원 (1~6월은 637만원)입니다. 월 소득이 590만원을 초과해도 보험료는 590만원 기준으로 부과되어 본인 부담은 약 31만 3천원이 최대치입니다."}},
   {"@type":"Question","name":"산재보험은 왜 사업주만 부담하나요?","acceptedAnswer":{"@type":"Answer","text":"산재보험은 업무상 재해 보상을 위한 보험으로 사업주의 무과실 책임을 보상하는 성격이라 근로자 부담 없이 사업주가 전액 부담합니다. 업종별로 0.7%~18.6%로 요율이 다릅니다."}}
 ]}
 </script>
@@ -235,17 +235,17 @@
           <span style="text-align:right">사업주</span>
         </div>
         <div class="insurance-row">
-          <span class="name"><span class="name-main">국민연금</span><span class="name-sub">각 4.5%</span></span>
+          <span class="name"><span class="name-main">국민연금</span><span class="name-sub">각 4.75%</span></span>
           <span class="col-amount" id="np-emp">0원</span>
           <span class="col-amount" id="np-er">0원</span>
         </div>
         <div class="insurance-row">
-          <span class="name"><span class="name-main">건강보험</span><span class="name-sub">각 3.545%</span></span>
+          <span class="name"><span class="name-main">건강보험</span><span class="name-sub">각 3.595%</span></span>
           <span class="col-amount" id="hi-emp">0원</span>
           <span class="col-amount" id="hi-er">0원</span>
         </div>
         <div class="insurance-row">
-          <span class="name"><span class="name-main">장기요양보험</span><span class="name-sub">건보 × 12.95%</span></span>
+          <span class="name"><span class="name-main">장기요양보험</span><span class="name-sub">건보 × 13.14%</span></span>
           <span class="col-amount" id="ltc-emp">0원</span>
           <span class="col-amount" id="ltc-er">0원</span>
         </div>
@@ -275,9 +275,9 @@
       <table class="rate-table">
         <thead><tr><th>항목</th><th>근로자</th><th>사업주</th></tr></thead>
         <tbody>
-          <tr><td>국민연금</td><td>4.5%</td><td>4.5%</td></tr>
-          <tr><td>건강보험</td><td>3.545%</td><td>3.545%</td></tr>
-          <tr><td>장기요양보험 (건보료의)</td><td>12.95%</td><td>12.95%</td></tr>
+          <tr><td>국민연금</td><td>4.75%</td><td>4.75%</td></tr>
+          <tr><td>건강보험</td><td>3.595%</td><td>3.595%</td></tr>
+          <tr><td>장기요양보험 (건보료의)</td><td>13.14%</td><td>13.14%</td></tr>
           <tr><td>고용보험 (실업급여)</td><td>0.9%</td><td>0.9%</td></tr>
           <tr><td>고용보험 (고용안정·150인 미만)</td><td>-</td><td>0.25%</td></tr>
           <tr><td>산재보험 (업종별)</td><td>-</td><td>0.7~18.6%</td></tr>
@@ -367,10 +367,10 @@
   const toNum = el => Number((el.value || '0').replace(/[^\d]/g, ''));
 
   const RATES = {
-    pension: 0.045,
-    pensionMaxBase: 5900000,
-    health: 0.03545,
-    care: 0.1295,
+    pension: 0.0475,
+    pensionMaxBase: 6590000,
+    health: 0.03595,
+    care: 0.1314,
     employmentEmployee: 0.009,
     employmentEmployerByCompany: {
       'under150': 0.0115,    // 0.9% + 0.25%

@@ -810,15 +810,15 @@
         </div>
         <ul class="breakdown-list">
           <li class="breakdown-item">
-            <span class="breakdown-label">국민연금 <span class="pct">4.5%</span></span>
+            <span class="breakdown-label">국민연금 <span class="pct">4.75%</span></span>
             <span class="breakdown-value" id="pension">0원</span>
           </li>
           <li class="breakdown-item">
-            <span class="breakdown-label">건강보험 <span class="pct">3.545%</span></span>
+            <span class="breakdown-label">건강보험 <span class="pct">3.595%</span></span>
             <span class="breakdown-value" id="health">0원</span>
           </li>
           <li class="breakdown-item">
-            <span class="breakdown-label">장기요양보험 <span class="pct">건보×12.95%</span></span>
+            <span class="breakdown-label">장기요양보험 <span class="pct">건보×13.14%</span></span>
             <span class="breakdown-value" id="care">0원</span>
           </li>
           <li class="breakdown-item">
@@ -896,18 +896,18 @@
           <tr><th>항목</th><th>근로자 부담률</th></tr>
         </thead>
         <tbody>
-          <tr><td>국민연금</td><td>4.5%</td></tr>
-          <tr><td>건강보험</td><td>3.545%</td></tr>
-          <tr><td>장기요양보험</td><td>건강보험료의 12.95%</td></tr>
+          <tr><td>국민연금</td><td>4.75% (2026 인상)</td></tr>
+          <tr><td>건강보험</td><td>3.595%</td></tr>
+          <tr><td>장기요양보험</td><td>건강보험료의 13.14%</td></tr>
           <tr><td>고용보험</td><td>0.9%</td></tr>
         </tbody>
       </table>
 
       <h3>국민연금</h3>
-      <p>월 기준소득월액의 4.5%를 근로자가 부담합니다. 2026년 기준 월 상한액은 약 590만원으로, 이를 초과하는 소득에는 동일한 보험료가 적용됩니다. 회사도 동일 금액을 추가 납부합니다.</p>
+      <p>월 기준소득월액의 4.5%를 근로자가 부담합니다. 2026년 7월부터 월 상한액은 659만원 (1~6월은 637만원)으로, 이를 초과하는 소득에는 동일한 보험료가 적용됩니다. 회사도 동일 금액을 추가 납부합니다.</p>
 
       <h3>건강보험 · 장기요양보험</h3>
-      <p>건강보험은 월 보수의 3.545%, 장기요양보험은 건강보험료의 12.95%를 추가로 부담합니다. 회사가 동일 금액을 함께 납부하므로 실제 보험료의 절반만 본인 부담입니다.</p>
+      <p>건강보험은 월 보수의 3.595%, 장기요양보험은 건강보험료의 13.14%를 추가로 부담합니다. 회사가 동일 금액을 함께 납부하므로 실제 보험료의 절반만 본인 부담입니다.</p>
 
       <h3>소득세 (간이세액표)</h3>
       <p>매월 원천징수되는 소득세는 국세청 간이세액표를 따르며, 부양가족 수와 자녀 수에 따라 달라집니다. 본 계산기는 누진세율 + 근로소득공제 + 인적공제 + 자녀세액공제 + 근로소득세액공제를 반영하지만, 실제 명세서와는 약간의 차이가 있을 수 있습니다.</p>
@@ -945,7 +945,7 @@
 
       <details class="faq-item">
         <summary>국민연금 상한액은 무엇인가요?</summary>
-        <div class="faq-a">국민연금은 기준소득월액의 4.5%를 부담하지만, 월 590만원(2026년 기준)을 초과하는 소득에는 추가로 부과되지 않습니다. 따라서 고연봉자라도 국민연금 부담은 약 26만원 선에서 멈춥니다.</div>
+        <div class="faq-a">국민연금은 기준소득월액의 4.5%를 부담하지만, 월 659만원(2026년 7월 기준)을 초과하는 소득에는 추가로 부과되지 않습니다. 따라서 고연봉자라도 국민연금 부담은 약 31만원 선에서 멈춥니다.</div>
       </details>
 
       <details class="faq-item">
@@ -975,10 +975,10 @@
 
   // ========== 상수 (2026년 기준) ==========
   const RATES = {
-    pension: 0.045,         // 국민연금
-    pensionMaxBase: 5900000, // 월 상한액
-    health: 0.03545,        // 건강보험
-    care: 0.1295,           // 장기요양 (건보료 × %)
+    pension: 0.0475,         // 국민연금
+    pensionMaxBase: 6590000, // 월 상한액
+    health: 0.03595,        // 건강보험
+    care: 0.1314,           // 장기요양 (건보료 × %)
     employment: 0.009,      // 고용보험
   };
 
