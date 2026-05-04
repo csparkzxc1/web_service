@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- 메인 페이지 (연봉 실수령액 계산기) -->
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!--
+    새 도구 추가 시 아래 형식으로 추가:
+
+    <url>
+      <loc>https://example.com/tools/severance.html</loc>
+      <lastmod>YYYY-MM-DD</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  -->
+
+</urlset>
