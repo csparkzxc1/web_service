@@ -1,0 +1,54 @@
+{
+  "name": "월급플러스 - 직장인 급여 계산기",
+  "short_name": "월급플러스",
+  "description": "2026년 최신 4대보험·소득세 자동 반영 무료 급여 계산기. 실수령액·퇴직금·시급·연차수당·4대보험 한곳에.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAF7F2",
+  "theme_color": "#D94A1F",
+  "lang": "ko-KR",
+  "scope": "/",
+  "categories": ["finance", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "연봉 실수령액",
+      "short_name": "실수령액",
+      "description": "연봉 실수령액 계산",
+      "url": "/",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "시급 계산기",
+      "short_name": "시급",
+      "url": "/tools/hourly.html",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "퇴직금 계산기",
+      "short_name": "퇴직금",
+      "url": "/tools/severance.html",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
