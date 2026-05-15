@@ -151,6 +151,23 @@ details.faq-item .faq-a{font-size:14px;color:var(--ink-soft);line-height:1.7;mar
 .related-tools-grid a:hover{border-color:var(--accent);transform:translateY(-1px)}
 .related-tools-grid a span{display:block;font-size:11px;color:var(--ink-mute);font-weight:500;margin-top:2px}
 
+.schedule-section{margin-top:24px;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;display:none}
+.schedule-section.show{display:block;animation:fadeIn .4s ease}
+.schedule-header{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.schedule-title{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--ink)}
+.schedule-subtitle{font-size:12px;color:var(--ink-mute);margin-top:2px}
+.schedule-toggle{font-size:12px;background:var(--bg-soft);border:none;padding:6px 12px;border-radius:8px;cursor:pointer;color:var(--ink-soft);font-weight:600;font-family:inherit}
+.schedule-toggle:hover{background:var(--accent-soft);color:var(--accent)}
+.schedule-table-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.schedule-table{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;min-width:520px}
+.schedule-table th,.schedule-table td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+.schedule-table th{background:var(--bg-soft);font-weight:700;font-size:11px;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;position:sticky;top:0}
+.schedule-table th:first-child,.schedule-table td:first-child{text-align:center;font-weight:600}
+.schedule-table td:first-child{color:var(--ink-mute);font-size:12px}
+.schedule-table tr:hover td{background:var(--bg-soft)}
+.schedule-table tr:last-child td{border-bottom:none;font-weight:700;color:var(--accent)}
+.principal-bar{display:inline-block;height:6px;background:var(--accent);border-radius:3px;vertical-align:middle;margin-right:4px}
+
 footer{margin-top:60px;padding-top:28px;border-top:1px solid var(--line);text-align:center;font-size:12px;color:var(--ink-mute);line-height:1.7}
 footer a{color:var(--ink-soft);text-decoration:none;margin:0 6px}
 
@@ -296,6 +313,31 @@ footer a{color:var(--ink-soft);text-decoration:none;margin:0 6px}
         </div>
       </div>
 
+    </div>
+
+    <div class="schedule-section" id="scheduleSection">
+      <div class="schedule-header">
+        <div>
+          <div class="schedule-title">연도별 상환 스케줄</div>
+          <div class="schedule-subtitle" id="scheduleSubtitle">매년 원금/이자 상환 흐름</div>
+        </div>
+        <button type="button" class="schedule-toggle" id="scheduleToggle" onclick="toggleSchedule()">접기 ▲</button>
+      </div>
+      <div class="schedule-table-wrapper" id="scheduleTableWrapper">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>연차</th>
+              <th>연 상환액</th>
+              <th>원금</th>
+              <th>이자</th>
+              <th>잔액</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleTableBody">
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div class="tip-box">
@@ -552,8 +594,124 @@ function graduated(P, annualRate, years, initialRatio = 0.85) {
     lastMonth: lastMonth,
     total: total,
     interest: total - P,
-    yearlyGrowth: (Math.pow(g, 12) - 1) * 100
+    yearlyGrowth: (Math.pow(g, 12) - 1) * 100,
+    g: g
   };
+}
+
+// 연도별 상환 스케줄 생성
+function buildSchedule(P, annualRate, years, method) {
+  const r = annualRate / 100 / 12;
+  const n = years * 12;
+  const schedule = [];
+  let balance = P;
+  
+  // 방식별 초기화
+  let equalPiMonthly, principalPerMonth, gradM1, gradG;
+  
+  if (method === 'equal-pi') {
+    equalPiMonthly = r === 0 ? P / n : P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+  } else if (method === 'equal-principal') {
+    principalPerMonth = P / n;
+  } else if (method === 'graduated') {
+    const gradResult = graduated(P, annualRate, years);
+    gradM1 = gradResult.firstMonth;
+    gradG = gradResult.g;
+  }
+  
+  for (let year = 1; year <= years; year++) {
+    let yearPrincipal = 0;
+    let yearInterest = 0;
+    let yearTotal = 0;
+    
+    for (let m = 0; m < 12; m++) {
+      const monthIndex = (year - 1) * 12 + m;
+      const interest = balance * r;
+      let payment, principalPmt;
+      
+      if (method === 'equal-pi') {
+        payment = equalPiMonthly;
+        principalPmt = payment - interest;
+      } else if (method === 'equal-principal') {
+        principalPmt = principalPerMonth;
+        payment = principalPmt + interest;
+      } else if (method === 'graduated') {
+        payment = gradM1 * Math.pow(gradG, monthIndex);
+        principalPmt = payment - interest;
+      } else if (method === 'lump-sum') {
+        // 만기일시: 매월 이자만, 마지막 달에 원금
+        payment = interest;
+        principalPmt = 0;
+        if (year === years && m === 11) {
+          principalPmt = balance;
+          payment = interest + balance;
+        }
+      }
+      
+      balance -= principalPmt;
+      yearPrincipal += principalPmt;
+      yearInterest += interest;
+      yearTotal += payment;
+    }
+    
+    schedule.push({
+      year: year,
+      yearlyPayment: yearTotal,
+      principal: yearPrincipal,
+      interest: yearInterest,
+      balance: Math.max(0, balance)
+    });
+  }
+  
+  return schedule;
+}
+
+// 스케줄 표시
+function renderSchedule(P, annualRate, years, method) {
+  const schedule = buildSchedule(P, annualRate, years, method);
+  const tbody = document.getElementById('scheduleTableBody');
+  const subtitle = document.getElementById('scheduleSubtitle');
+  
+  const methodNames = {
+    'equal-pi': '원리금 균등 상환',
+    'equal-principal': '원금 균등 상환',
+    'graduated': '체증식 상환 (점점 증가)',
+    'lump-sum': '만기일시 상환 (만기에 원금 일시)'
+  };
+  subtitle.textContent = methodNames[method] + ' · 연도별 원금/이자 흐름';
+  
+  // 최대 원금 (막대 그래프용)
+  const maxPrincipal = Math.max(...schedule.map(s => s.principal));
+  
+  tbody.innerHTML = schedule.map(s => {
+    const barWidth = maxPrincipal > 0 ? (s.principal / maxPrincipal * 30) : 0;
+    return `<tr>
+      <td>${s.year}년</td>
+      <td>${formatKRW(s.yearlyPayment)}</td>
+      <td>
+        ${barWidth > 1 ? `<span class="principal-bar" style="width:${barWidth}px"></span>` : ''}
+        ${formatKRW(s.principal)}
+      </td>
+      <td>${formatKRW(s.interest)}</td>
+      <td>${formatKRW(s.balance)}</td>
+    </tr>`;
+  }).join('');
+  
+  document.getElementById('scheduleSection').classList.add('show');
+}
+
+let scheduleExpanded = true;
+function toggleSchedule() {
+  const wrapper = document.getElementById('scheduleTableWrapper');
+  const toggle = document.getElementById('scheduleToggle');
+  scheduleExpanded = !scheduleExpanded;
+  if (scheduleExpanded) {
+    wrapper.style.display = 'block';
+    toggle.textContent = '접기 ▲';
+  } else {
+    wrapper.style.display = 'none';
+    toggle.textContent = '펼치기 ▼';
+  }
 }
 
 function calculate() {
@@ -661,6 +819,10 @@ function calculate() {
   }
 
   resultCard.classList.add('show');
+  
+  // 상환 스케줄 표시
+  renderSchedule(principal, rate, years, method);
+  
   resultCard.scrollIntoView({behavior: 'smooth', block: 'center'});
 }
 
