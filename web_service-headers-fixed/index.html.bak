@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FAF7F2">
+
+<title>월급플러스 | 직장인 급여·세금·대출 계산기 모음 (2026)</title>
+<meta name="description" content="연봉 실수령액·퇴직금·시급·4대보험·실업급여·대출이자 등 직장인이 자주 쓰는 9가지 계산기 한 자리에. 2026년 최신 기준 적용.">
+<meta name="keywords" content="월급플러스, 연봉 실수령액, 직장인 계산기, 퇴직금, 시급, 4대보험, 실업급여, 대출 이자, 중위소득">
+<meta name="author" content="월급플러스">
+<link rel="canonical" href="https://web-service-omega.vercel.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="월급플러스 - 직장인 계산기 모음">
+<meta property="og:description" content="2026년 최신 기준 직장인 도구 9종 한눈에">
+<meta property="og:url" content="https://web-service-omega.vercel.app/">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="월급플러스">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"월급플러스","alternateName":"MWAGE","url":"https://web-service-omega.vercel.app/","description":"직장인 급여·세금·대출 계산기 모음","inLanguage":"ko-KR"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"연봉 실수령액 계산기","url":"https://web-service-omega.vercel.app/tools/salary.html"},
+  {"@type":"ListItem","position":2,"name":"연봉 실수령액 표","url":"https://web-service-omega.vercel.app/tools/salary-table.html"},
+  {"@type":"ListItem","position":3,"name":"시급 계산기","url":"https://web-service-omega.vercel.app/tools/hourly.html"},
+  {"@type":"ListItem","position":4,"name":"중위소득 계산기","url":"https://web-service-omega.vercel.app/tools/median-income.html"},
+  {"@type":"ListItem","position":5,"name":"퇴직금 계산기","url":"https://web-service-omega.vercel.app/tools/severance.html"},
+  {"@type":"ListItem","position":6,"name":"연차수당 계산기","url":"https://web-service-omega.vercel.app/tools/annual-leave.html"},
+  {"@type":"ListItem","position":7,"name":"4대보험 계산기","url":"https://web-service-omega.vercel.app/tools/insurance.html"},
+  {"@type":"ListItem","position":8,"name":"실업급여 계산기","url":"https://web-service-omega.vercel.app/tools/unemployment.html"},
+  {"@type":"ListItem","position":9,"name":"대출 이자 계산기","url":"https://web-service-omega.vercel.app/tools/loan.html"}
+]}
+</script>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D94A1F'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='serif' font-size='62' font-weight='500' fill='white'%3E%E2%82%A9%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KEGHWX1X13"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KEGHWX1X13');</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FAF7F2;
+  --bg-card:#FFFFFF;
+  --bg-soft:#F2EDE4;
+  --ink:#1A1815;
+  --ink-soft:#5C5852;
+  --ink-mute:#8E8A82;
+  --accent:#D94A1F;
+  --accent-soft:#FBE8E0;
+  --accent-light:#FFF1EB;
+  --line:#E8E2D5;
+  --line-strong:#D4CDB8;
+  --shadow-sm:0 1px 2px rgba(26,24,21,.04);
+  --shadow-md:0 1px 2px rgba(26,24,21,.04),0 8px 24px rgba(26,24,21,.06);
+  --shadow-hover:0 1px 2px rgba(26,24,21,.04),0 12px 32px rgba(26,24,21,.1);
+  --radius:16px;
+  --radius-lg:24px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;background-image:radial-gradient(ellipse 1000px 700px at 50% -20%,rgba(217,74,31,.06) 0%,transparent 50%);min-height:100vh;overflow-x:hidden}
+
+/* 상단바 */
+.topbar{background:rgba(250,247,242,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;padding:14px 0}
+.topbar-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-logo{width:34px;height:34px;border-radius:10px;background:var(--accent);color:white;display:grid;place-items:center;font-family:serif;font-weight:600;font-size:20px}
+.brand-name{font-family:'Fraunces',serif;font-size:20px;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+.brand-name em{font-style:italic;color:var(--accent)}
+.topnav{display:flex;gap:4px;font-size:13px}
+.topnav a{color:var(--ink-soft);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:500;transition:all .15s;white-space:nowrap}
+.topnav a:hover{background:var(--bg-soft);color:var(--accent)}
+.topnav-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:8px}
+
+.container{max-width:1100px;margin:0 auto;padding:32px 20px 80px}
+
+/* 헤더 */
+header.page-header{padding:56px 0 64px;text-align:center;position:relative}
+.pill{display:inline-block;font-size:11px;background:var(--bg-card);color:var(--ink-soft);padding:6px 14px;border-radius:100px;font-weight:600;letter-spacing:.04em;margin-bottom:20px;border:1px solid var(--line)}
+.pill .dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:6px;vertical-align:middle;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:'Fraunces',serif;font-size:clamp(42px,8vw,68px);font-weight:400;line-height:1.02;letter-spacing:-.035em;margin-bottom:20px}
+h1 em{font-style:italic;color:var(--accent);font-weight:300}
+.subtitle{font-size:17px;color:var(--ink-soft);line-height:1.6;max-width:540px;margin:0 auto 32px}
+
+.hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:white;padding:14px 28px;border-radius:100px;text-decoration:none;font-size:14px;font-weight:600;transition:all .2s;letter-spacing:.01em}
+.hero-cta:hover{background:var(--accent);transform:translateY(-1px)}
+.hero-cta .arrow{transition:transform .2s;font-size:16px;line-height:1}
+.hero-cta:hover .arrow{transform:translateX(4px)}
+
+/* 카테고리 섹션 */
+.category-section{margin-bottom:48px}
+.category-header{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;padding:0 4px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.category-num{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--accent);font-weight:400;letter-spacing:-.01em}
+.category-title{font-family:'Fraunces',serif;font-size:22px;font-weight:500;letter-spacing:-.015em;color:var(--ink)}
+.category-count{font-size:12px;color:var(--ink-mute);font-weight:500;background:var(--bg-soft);padding:2px 10px;border-radius:100px}
+.category-desc{font-size:13px;color:var(--ink-mute);margin-left:auto;font-style:italic;font-family:'Fraunces',serif}
+
+/* 카드 그리드 */
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+
+.tool-card{display:block;padding:24px 22px;border-radius:var(--radius);text-decoration:none;color:var(--ink);transition:all .25s;position:relative;overflow:hidden;background:var(--bg-card);border:1px solid var(--line);min-height:138px;box-shadow:var(--shadow-sm)}
+.tool-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.tool-card::after{content:'';position:absolute;top:0;right:0;width:0;height:1px;background:var(--accent);transition:width .3s}
+.tool-card:hover::after{width:100%}
+
+.tool-card-icon{position:absolute;top:22px;right:22px;font-size:22px;opacity:.4;transition:all .25s}
+.tool-card:hover .tool-card-icon{opacity:1;transform:scale(1.1)}
+
+.tool-card-name{font-family:'Fraunces',serif;font-size:22px;font-weight:500;line-height:1.2;margin-bottom:8px;letter-spacing:-.015em;color:var(--ink);padding-right:32px}
+.tool-card-desc{font-size:13px;color:var(--ink-soft);line-height:1.55;margin-bottom:12px}
+.tool-card-meta{display:flex;gap:10px;align-items:center;font-size:11px;color:var(--ink-mute);letter-spacing:.03em;font-weight:500;text-transform:uppercase}
+.tool-card-meta .dot{width:3px;height:3px;background:var(--line-strong);border-radius:50%}
+
+/* 강조 카드 (HOT/NEW) - 주황 액센트 미세하게 */
+.tool-card.featured{background:linear-gradient(135deg,var(--accent-light) 0%,var(--bg-card) 100%);border-color:var(--accent-soft)}
+.tool-card.featured:hover{border-color:var(--accent)}
+.tool-card.featured .tool-card-name{color:var(--ink)}
+.tool-card.featured::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+
+.badge{position:absolute;top:14px;right:54px;font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--accent);background:var(--bg-card);padding:3px 8px;border-radius:100px;border:1px solid var(--accent-soft)}
+
+/* 가이드 섹션 */
+.extra-section{margin-top:60px;padding-top:40px;border-top:1px solid var(--line)}
+.extra-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:18px}
+.extra-card{background:var(--bg-card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-decoration:none;color:var(--ink);transition:all .15s;display:flex;align-items:center;gap:14px}
+.extra-card:hover{border-color:var(--accent);transform:translateX(2px)}
+.extra-card .icon{font-size:20px;flex-shrink:0;opacity:.7}
+.extra-card .text-name{font-weight:600;font-size:14px;margin-bottom:2px;font-family:'Fraunces',serif;font-size:15px;letter-spacing:-.01em}
+.extra-card .text-desc{font-size:11px;color:var(--ink-mute);font-weight:500}
+
+/* 사이트 소개 */
+.intro-section{margin-top:60px;padding:40px 32px;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.intro-section h2{font-family:'Fraunces',serif;font-size:24px;font-weight:500;margin-bottom:14px;letter-spacing:-.015em}
+.intro-section h2 em{font-style:italic;color:var(--accent);font-weight:400}
+.intro-section p{font-size:14px;color:var(--ink-soft);line-height:1.75;max-width:580px;margin:0 auto}
+
+footer{margin-top:48px;padding-top:24px;text-align:center;font-size:12px;color:var(--ink-mute);line-height:1.7}
+footer a{color:var(--ink-soft);text-decoration:none;margin:0 6px}
+footer a:hover{color:var(--accent)}
+
+@media (max-width:900px){
+  .topnav{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg-card);border-bottom:1px solid var(--line);padding:12px}
+  .topnav.open{display:flex}
+  .topnav a{padding:10px 14px}
+  .topnav-toggle{display:block}
+}
+@media (max-width:600px){
+  .tool-grid{grid-template-columns:1fr}
+  .category-desc{display:none}
+  header.page-header{padding:36px 0 48px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">
+      <span class="brand-logo">₩</span>
+      <span class="brand-name">월급<em>플러스</em></span>
+    </a>
+    <nav class="topnav" id="topnav">
+      <a href="/tools/salary.html">실수령액</a>
+      <a href="/tools/salary-table.html">연봉표</a>
+      <a href="/tools/severance.html">퇴직금</a>
+      <a href="/tools/insurance.html">4대보험</a>
+      <a href="/tools/unemployment.html">실업급여</a>
+      <a href="/tools/loan.html">대출</a>
+      <a href="/blog/">블로그</a>
+    </nav>
+    <button class="topnav-toggle" onclick="document.getElementById('topnav').classList.toggle('open')" aria-label="메뉴 열기">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="container">
+
+  <header class="page-header">
+    <span class="pill"><span class="dot"></span>2026년 최신 기준</span>
+    <h1>직장인 <em>계산기</em>,<br>한 자리에서.</h1>
+    <p class="subtitle">연봉부터 대출까지, 직장인이 자주 쓰는 9가지 도구를 정리했어요.<br>가장 많이 쓰는 것부터 시작해보세요.</p>
+    <a class="hero-cta" href="/tools/salary.html">
+      연봉 실수령액 계산하기
+      <span class="arrow">→</span>
+    </a>
+  </header>
+
+  <main>
+
+    <!-- 급여 -->
+    <section class="category-section">
+      <div class="category-header">
+        <span class="category-num">01</span>
+        <h2 class="category-title">급여·연봉</h2>
+        <span class="category-count">4</span>
+        <span class="category-desc">월급 받는 직장인 필수</span>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card featured" href="/tools/salary.html">
+          <span class="badge">HOT</span>
+          <span class="tool-card-icon">💰</span>
+          <div class="tool-card-name">연봉 실수령액</div>
+          <div class="tool-card-desc">2026년 4대보험·세금 공제 후 월급</div>
+          <div class="tool-card-meta">연봉 <span class="dot"></span> 월급 <span class="dot"></span> 세후</div>
+        </a>
+        <a class="tool-card" href="/tools/salary-table.html">
+          <span class="tool-card-icon">📊</span>
+          <div class="tool-card-name">연봉 실수령액 표</div>
+          <div class="tool-card-desc">2,000~10,000만원 전체 표</div>
+          <div class="tool-card-meta">한눈에 비교</div>
+        </a>
+        <a class="tool-card" href="/tools/hourly.html">
+          <span class="tool-card-icon">⏰</span>
+          <div class="tool-card-name">시급 계산기</div>
+          <div class="tool-card-desc">통상시급·주휴수당·야간수당</div>
+          <div class="tool-card-meta">알바 <span class="dot"></span> 시급제</div>
+        </a>
+        <a class="tool-card" href="/tools/median-income.html">
+          <span class="tool-card-icon">📍</span>
+          <div class="tool-card-name">중위소득 계산기</div>
+          <div class="tool-card-desc">본인 소득의 사회적 위치 확인</div>
+          <div class="tool-card-meta">정책 자격 판정</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 노동법 -->
+    <section class="category-section">
+      <div class="category-header">
+        <span class="category-num">02</span>
+        <h2 class="category-title">노동법·연차</h2>
+        <span class="category-count">2</span>
+        <span class="category-desc">받을 수 있는 권리</span>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card" href="/tools/severance.html">
+          <span class="tool-card-icon">💼</span>
+          <div class="tool-card-name">퇴직금 계산기</div>
+          <div class="tool-card-desc">평균임금 × 30일 × 근속연수</div>
+          <div class="tool-card-meta">퇴직 <span class="dot"></span> 이직</div>
+        </a>
+        <a class="tool-card" href="/tools/annual-leave.html">
+          <span class="tool-card-icon">🏖️</span>
+          <div class="tool-card-name">연차수당 계산기</div>
+          <div class="tool-card-desc">미사용 연차 통상임금 환산</div>
+          <div class="tool-card-meta">연말 정산</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 보험·실업 -->
+    <section class="category-section">
+      <div class="category-header">
+        <span class="category-num">03</span>
+        <h2 class="category-title">보험·실업</h2>
+        <span class="category-count">2</span>
+        <span class="category-desc">안전망 점검</span>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card" href="/tools/insurance.html">
+          <span class="tool-card-icon">🛡️</span>
+          <div class="tool-card-name">4대보험 계산기</div>
+          <div class="tool-card-desc">국민·건강·고용·산재 자동 계산</div>
+          <div class="tool-card-meta">2026년 요율</div>
+        </a>
+        <a class="tool-card" href="/tools/unemployment.html">
+          <span class="tool-card-icon">🪂</span>
+          <div class="tool-card-name">실업급여 계산기</div>
+          <div class="tool-card-desc">자격조건·일액·지급일수 자동</div>
+          <div class="tool-card-meta">상한 68,100원</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 금융·대출 -->
+    <section class="category-section">
+      <div class="category-header">
+        <span class="category-num">04</span>
+        <h2 class="category-title">금융·대출</h2>
+        <span class="category-count">1</span>
+        <span class="category-desc">대출 계획</span>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card featured" href="/tools/loan.html">
+          <span class="badge">NEW</span>
+          <span class="tool-card-icon">🏦</span>
+          <div class="tool-card-name">대출 이자 계산기</div>
+          <div class="tool-card-desc">원리금·원금·체증식·만기일시 비교</div>
+          <div class="tool-card-meta">4가지 방식 <span class="dot"></span> 연도별 스케줄</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 사이트 소개 -->
+    <section class="intro-section">
+      <h2>왜 <em>월급플러스</em>?</h2>
+      <p>2026년 최신 세법·노동법·금융 기준으로 만든 직장인 도구 모음입니다. 광고 없이 깔끔한 화면에서 정확한 계산만 제공해요. 어려운 용어 없이 직장인이 바로 이해할 수 있도록 설계했습니다.</p>
+    </section>
+
+    <!-- 가이드 -->
+    <section class="extra-section">
+      <div class="category-header">
+        <span class="category-num">+</span>
+        <h2 class="category-title">함께 보면 좋은 가이드</h2>
+      </div>
+      <div class="extra-grid">
+        <a class="extra-card" href="/blog/global-income-tax-2026.html">
+          <span class="icon">📊</span>
+          <div class="text">
+            <div class="text-name">2026 종합소득세 신고</div>
+            <div class="text-desc">N잡 직장인 5월 31일 마감</div>
+          </div>
+        </a>
+        <a class="extra-card" href="/blog/parents-deduction.html">
+          <span class="icon">👨‍👩‍👧</span>
+          <div class="text">
+            <div class="text-name">부모님 인적공제</div>
+            <div class="text-desc">연 150만원 추가 절세</div>
+          </div>
+        </a>
+        <a class="extra-card" href="/blog/severance-under-1-year.html">
+          <span class="icon">💼</span>
+          <div class="text">
+            <div class="text-name">1년 미만 퇴직금</div>
+            <div class="text-desc">11개월과 12개월의 차이</div>
+          </div>
+        </a>
+        <a class="extra-card" href="/blog/salary-5000.html">
+          <span class="icon">💰</span>
+          <div class="text">
+            <div class="text-name">연봉 5000 실수령액</div>
+            <div class="text-desc">월 357만원의 비밀</div>
+          </div>
+        </a>
+        <a class="extra-card" href="/blog/">
+          <span class="icon">📖</span>
+          <div class="text">
+            <div class="text-name">블로그 전체 보기</div>
+            <div class="text-desc">23편의 직장인 가이드</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <a href="/blog/">블로그</a> · <a href="/about.html">소개</a> · <a href="/privacy.html">개인정보처리방침</a> · <a href="/terms.html">이용약관</a> · <a href="/contact.html">문의</a>
+    <br><br>
+    © 2026 월급플러스 (MWAGE)<br>
+    본 도구는 일반 정보 제공이 목적이며, 정확한 수치는 관련 기관에서 확인하세요.
+  </footer>
+
+</div>
+
+</body>
+</html>

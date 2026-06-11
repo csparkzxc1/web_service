@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FAF7F2">
+
+<title>블로그 - 월급플러스 | 직장인을 위한 급여·노동법·세금 가이드</title>
+<meta name="description" content="2026년 최신 정보 기반 직장인 급여, 4대보험, 퇴직금, 종합소득세, 노동법 가이드. 실수령액부터 부모님 인적공제까지 한눈에 정리.">
+<link rel="canonical" href="https://web-service-omega.vercel.app/blog/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="블로그 - 월급플러스">
+<meta property="og:description" content="직장인을 위한 급여·노동법·세금 가이드">
+<meta property="og:url" content="https://web-service-omega.vercel.app/blog/">
+<meta property="og:locale" content="ko_KR">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D94A1F'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='serif' font-size='62' font-weight='500' fill='white'%3E%E2%82%A9%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KEGHWX1X13"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KEGHWX1X13');</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF7F2;--bg-card:#FFFFFF;--bg-soft:#F2EDE4;--ink:#1A1815;--ink-soft:#5C5852;--ink-mute:#8E8A82;--accent:#D94A1F;--accent-soft:#FBE8E0;--accent-light:#FFF1EB;--line:#E8E2D5;--line-strong:#D4CDB8;--shadow-md:0 1px 2px rgba(26,24,21,.04),0 8px 24px rgba(26,24,21,.06);--radius:16px;--radius-lg:24px}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;background-image:radial-gradient(ellipse 800px 600px at 0% -10%,rgba(217,74,31,.05) 0%,transparent 50%);min-height:100vh}
+
+.topbar{background:rgba(250,247,242,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;padding:14px 0}
+.topbar-inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-logo{width:34px;height:34px;border-radius:10px;background:var(--accent);color:white;display:grid;place-items:center;font-family:serif;font-weight:600;font-size:20px}
+.brand-name{font-family:'Fraunces',serif;font-size:20px;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+.brand-name em{font-style:italic;color:var(--accent)}
+.topnav{display:flex;gap:6px;font-size:14px}
+.topnav a{color:var(--ink-soft);text-decoration:none;padding:8px 14px;border-radius:8px;font-weight:500;transition:all .15s}
+.topnav a:hover{background:var(--bg-soft);color:var(--accent)}
+.topnav a.active{color:var(--accent);background:var(--accent-light)}
+.topnav-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--ink);padding:8px}
+
+.container{max-width:880px;margin:0 auto;padding:24px 20px 80px}
+.nav-bread{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:13px}
+.nav-bread a{color:var(--ink-soft);text-decoration:none;padding:6px 10px;border-radius:8px}
+.nav-bread a:hover{background:var(--bg-soft);color:var(--accent)}
+.nav-bread .sep{color:var(--ink-mute)}
+.nav-bread .current{color:var(--ink);font-weight:600}
+
+header{padding:32px 0 32px;border-bottom:1px solid var(--line);margin-bottom:32px}
+h1{font-family:'Fraunces',serif;font-size:clamp(36px,7vw,46px);font-weight:500;line-height:1.05;letter-spacing:-.025em;margin-bottom:14px}
+h1 em{font-style:italic;font-weight:400;color:var(--accent)}
+.subtitle{font-size:16px;color:var(--ink-soft);max-width:540px;line-height:1.55}
+
+.section-title{font-family:'Fraunces',serif;font-size:22px;font-weight:500;margin:24px 0 12px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.section-title .pill-section{font-size:11px;background:var(--accent-soft);color:var(--accent);padding:4px 10px;border-radius:100px;font-weight:600;letter-spacing:.04em}
+
+.post-list{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.post-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px 22px;text-decoration:none;color:var(--ink);transition:all .2s;display:block}
+.post-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.post-pill{display:inline-block;font-size:11px;background:var(--bg-soft);color:var(--ink-soft);padding:4px 10px;border-radius:100px;font-weight:600;letter-spacing:.04em;margin-bottom:10px}
+.post-pill.hot{background:var(--accent-soft);color:var(--accent)}
+.post-title{font-family:'Fraunces',serif;font-size:20px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-bottom:6px;color:var(--ink)}
+.post-desc{font-size:14px;color:var(--ink-soft);line-height:1.55;margin-bottom:8px}
+.post-meta{font-size:12px;color:var(--ink-mute);display:flex;gap:10px;align-items:center}
+.post-meta .dot{width:3px;height:3px;background:var(--ink-mute);border-radius:50%}
+
+footer{margin-top:48px;padding-top:28px;border-top:1px solid var(--line);text-align:center;font-size:12px;color:var(--ink-mute);line-height:1.7}
+footer a{color:var(--ink-soft);text-decoration:none;margin:0 6px}
+
+@media (max-width:900px){
+  .topnav{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg-card);border-bottom:1px solid var(--line);padding:12px}
+  .topnav.open{display:flex}
+  .topnav-toggle{display:block}
+}
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<div class="container">
+
+  <nav class="nav-bread">
+    <a href="/">월급플러스</a>
+    <span class="sep">›</span>
+    <span class="current">블로그</span>
+  </nav>
+
+  <header>
+    <h1>직장인 급여·세금·노동법 <em>가이드</em></h1>
+    <p class="subtitle">2026년 최신 기준으로 정리한 실수령액, 4대보험, 퇴직금, 종합소득세, 인적공제 가이드. 실제 본인 케이스에 맞춰 사이트의 계산기와 함께 활용하세요.</p>
+  </header>
+
+  <main>
+
+    <h2 class="section-title">5월 시즌 가이드 <span class="pill-section">NEW</span></h2>
+    <div class="post-list">
+
+      <a class="post-card" href="/blog/global-income-tax-2026">
+        <span class="post-pill hot">5월 31일 마감</span>
+        <h3 class="post-title">2026 종합소득세 신고, N잡 직장인도 필수</h3>
+        <p class="post-desc">신고 기간·대상·홈택스 신고법까지 30분 가이드. 모두채움 서비스로 빠르게 처리하기.</p>
+        <div class="post-meta">
+          <span>2026년 5월 8일</span>
+          <span class="dot"></span>
+          <span>5분</span>
+        </div>
+      </a>
+
+      <a class="post-card" href="/blog/tax-refund-check">
+        <span class="post-pill hot">환급 시즌</span>
+        <h3 class="post-title">종합소득세 환급금 조회 방법</h3>
+        <p class="post-desc">6월 말~7월 초 입금 일정. 홈택스에서 환급 예정 금액 확인하는 법.</p>
+        <div class="post-meta">
+          <span>2026년 5월 8일</span>
+          <span class="dot"></span>
+          <span>4분</span>
+        </div>
+      </a>
+
+      <a class="post-card" href="/blog/parents-deduction">
+        <span class="post-pill hot">어버이날</span>
+        <h3 class="post-title">부모님 인적공제, 제대로 받는 법</h3>
+        <p class="post-desc">만 60세 이상·연소득 100만원 이하 조건. 따로 살아도 OK, 1인당 150만원 절세.</p>
+        <div class="post-meta">
+          <span>2026년 5월 8일</span>
+          <span class="dot"></span>
+          <span>5분</span>
+        </div>
+      </a>
+
+    </div>
+
+    <h2 class="section-title">실수령액 분석</h2>
+    <div class="post-list">
+
+      <a class="post-card" href="/blog/salary-5000">
+        <span class="post-pill">실수령액</span>
+        <h3 class="post-title">연봉 5000 실수령액, 정확히 얼마?</h3>
+        <p class="post-desc">2026년 기준 월 357만원. 4대보험·소득세 공제 내역과 부양가족별 차이.</p>
+        <div class="post-meta">
+          <span>2026년 5월 5일</span>
+          <span class="dot"></span>
+          <span>4분</span>
+        </div>
+      </a>
+
+      <a class="post-card" href="/blog/salary-4000">
+        <span class="post-pill">실수령액</span>
+        <h3 class="post-title">연봉 4000 실수령액, 월 292만원의 비밀</h3>
+        <p class="post-desc">한국 30대 평균 연봉 수준. 50:30:20으로 짜본 한 달 생활비.</p>
+        <div class="post-meta">
+          <span>2026년 5월 5일</span>
+          <span class="dot"></span>
+          <span>4분</span>
+        </div>
+      </a>
+
+      <a class="post-card" href="/blog/first-paycheck">
+        <span class="post-pill">신입 가이드</span>
+        <h3 class="post-title">신입 첫 월급, 실제로 얼마 들어올까?</h3>
+        <p class="post-desc">명세서와 통장 잔액이 다른 이유, 일할 계산까지.</p>
+        <div class="post-meta">
+          <span>2026년 5월 5일</span>
+          <span class="dot"></span>
+          <span>5분</span>
+        </div>
+      </a>
+
+    </div>
+
+    <h2 class="section-title">노동법 실무</h2>
+    <div class="post-list">
+
+      <a class="post-card" href="/blog/severance-under-1-year">
+        <span class="post-pill">퇴직금</span>
+        <h3 class="post-title">1년 미만 퇴직, 퇴직금 받을 수 있을까?</h3>
+        <p class="post-desc">11개월과 12개월의 차이는 수백만원. 부당해고 다투는 방법.</p>
+        <div class="post-meta">
+          <span>2026년 5월 5일</span>
+          <span class="dot"></span>
+          <span>4분</span>
+        </div>
+      </a>
+
+      <a class="post-card" href="/blog/no-weekly-holiday-pay">
+        <span class="post-pill">알바생 필독</span>
+        <h3 class="post-title">주휴수당 안 주는 회사, 신고하는 방법</h3>
+        <p class="post-desc">주 15시간 이상 일하면 받아야 하는 권리. 회사가 자주 하는 거짓말.</p>
+        <div class="post-meta">
+          <span>2026년 5월 5일</span>
+          <span class="dot"></span>
+          <span>4분</span>
+        </div>
+      </a>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <a href="/">홈으로</a> · <a href="/about">소개</a> · <a href="/privacy">개인정보처리방침</a> · <a href="/terms">이용약관</a> · <a href="/contact">문의</a>
+    <br><br>
+    © 2026 월급플러스 (MWAGE)
+  </footer>
+
+</div>
+<script src="/header.js" defer></script>
+</body>
+</html>

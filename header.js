@@ -14,7 +14,7 @@
 
   // 메뉴 정의 (순서 = 표시 순서). match: 이 경로로 시작하면 active.
   var MENU = [
-    { href: '/',                      label: '실수령액',   match: ['/', '/index.html'] },
+    { href: '/tools/salary',          label: '실수령액',   match: ['/tools/salary'] },
     { href: '/tools/salary-table',    label: '연봉표',     match: ['/tools/salary-table'] },
     { href: '/tools/median-income',   label: '중위소득',   match: ['/tools/median-income'] },
     { href: '/tools/severance',       label: '퇴직금',     match: ['/tools/severance'] },
