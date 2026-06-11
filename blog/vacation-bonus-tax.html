@@ -2,167 +2,262 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#FAF7F2">
-<title>휴가비·명절상여 비과세 한도 2026 | 세금 안 내는 금액 계산 - 월급플러스</title>
-<meta name="description" content="2026년 명절상여금, 휴가비 비과세 한도. 세후 월급 계산 시 꼭 알아야 할 기준. 차등지급, 초과분은 어떻게?">
-<meta name="keywords" content="명절상여금, 휴가비, 비과세, 세금, 상여금 계산, 2026">
+
+<title>휴가비·명절상여 비과세 한도 2026 | 세금 안 내는 금액 - 월급플러스</title>
+<meta name="description" content="2026년 명절상여금과 휴가비 비과세 한도. 통상임금 기준 계산, 초과분은 어떻게 과세되는지까지.">
+<meta name="keywords" content="명절상여금, 휴가비, 비과세, 세금, 통상임금, 상여금 계산">
+<meta name="author" content="월급플러스">
+<link rel="canonical" href="https://salaryplus.kr/blog/vacation-bonus-tax.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="휴가비·명절상여, 세금 안 내는 금액은?">
+<meta property="og:description" content="2026년 비과세 한도 정확히 계산하기">
+<meta property="og:url" content="https://salaryplus.kr/blog/vacation-bonus-tax.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="월급플러스">
+<meta property="article:published_time" content="2026-05-25">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="휴가비·명절상여, 세금 안 내는 금액은?">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"휴가비·명절상여 비과세 한도 2026","description":"비과세 한도 계산과 초과분 과세 기준","author":{"@type":"Organization","name":"월급플러스"},"publisher":{"@type":"Organization","name":"월급플러스"},"datePublished":"2026-05-25","inLanguage":"ko-KR"}
+</script>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23D94A1F'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='serif' font-size='62' font-weight='500' fill='white'%3E₩%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KEGHWX1X13"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KEGHWX1X13');</script>
+
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif; background: #FAF7F2; color: #333; line-height: 1.8; }
-.container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-header { text-align: center; margin-bottom: 50px; }
-h1 { font-size: 2.2em; margin-bottom: 10px; color: #222; }
-.meta { color: #888; font-size: 0.95em; }
-.content { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-h2 { font-size: 1.5em; margin-top: 40px; margin-bottom: 20px; color: #222; border-bottom: 2px solid #FF9500; padding-bottom: 10px; }
-h3 { font-size: 1.2em; margin-top: 30px; margin-bottom: 15px; color: #333; }
-p { margin-bottom: 15px; }
-ul { margin: 20px 0 20px 30px; }
-li { margin-bottom: 10px; }
-.highlight { background: #FFF4E6; padding: 20px; border-left: 4px solid #FF9500; border-radius: 4px; margin: 20px 0; }
-.calculator { background: #F5F5F5; padding: 20px; border-radius: 8px; margin: 20px 0; }
-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-th { background: #F5F5F5; font-weight: 600; }
-footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; text-align: center; color: #888; font-size: 0.9em; }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#FAF7F2;--bg-card:#FFFFFF;--bg-soft:#F2EDE4;--bg-deep:#1A1815;--ink:#1A1815;--ink-soft:#5C5852;--ink-mute:#8E8A82;--accent:#D94A1F;--accent-soft:#FBE8E0;--line:#E8E2D5;--line-strong:#D4CDB8;--green:#2D7A4F;--shadow-md:0 1px 2px rgba(26,24,21,.04),0 8px 24px rgba(26,24,21,.06);--radius:16px;--radius-lg:24px}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;background-image:radial-gradient(ellipse 800px 600px at 0% -10%,rgba(217,74,31,.05) 0%,transparent 50%);min-height:100vh;overflow-x:hidden}
+  .container{max-width:720px;margin:0 auto;padding:24px 20px 80px}
+  .nav{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:13px}
+  .nav a{color:var(--ink-soft);text-decoration:none;padding:6px 10px;border-radius:8px}
+  .nav a:hover{background:var(--bg-soft);color:var(--accent)}
+  .nav .sep{color:var(--ink-mute)}
+  .nav .current{color:var(--ink);font-weight:600}
+  article{padding:16px 0}
+  .article-header{padding:8px 0 24px;border-bottom:1px solid var(--line);margin-bottom:32px}
+  .pill{display:inline-block;font-size:11px;background:var(--accent-soft);color:var(--accent);padding:5px 11px;border-radius:100px;font-weight:600;letter-spacing:.04em;margin-bottom:16px}
+  h1{font-family:'Fraunces',serif;font-size:clamp(30px,6vw,40px);font-weight:500;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .meta{font-size:13px;color:var(--ink-mute);display:flex;gap:12px;align-items:center}
+  .meta .dot{width:3px;height:3px;background:var(--ink-mute);border-radius:50%}
+  article p{font-size:16px;color:var(--ink-soft);margin-bottom:18px}
+  article p strong{color:var(--ink);font-weight:700}
+  article h2{font-family:'Fraunces',serif;font-size:26px;font-weight:500;margin:40px 0 14px;letter-spacing:-.015em;color:var(--ink)}
+  article h3{font-size:18px;font-weight:700;margin:28px 0 10px;color:var(--ink)}
+  article ul{margin:16px 0 16px 24px}
+  article li{margin-bottom:10px;color:var(--ink-soft)}
+  .highlight-box{background:linear-gradient(135deg,var(--bg-deep) 0%,#2A2622 100%);color:white;border-radius:var(--radius-lg);padding:28px 26px;margin:28px 0;position:relative;overflow:hidden}
+  .highlight-box::before{content:'';position:absolute;top:-30%;right:-15%;width:220px;height:220px;background:radial-gradient(circle,rgba(217,74,31,.3) 0%,transparent 70%);pointer-events:none}
+  .highlight-label{font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.08em;text-transform:uppercase;font-weight:600;margin-bottom:8px;position:relative;z-index:1}
+  .highlight-amount{font-family:'Fraunces',serif;font-size:44px;font-weight:500;line-height:1;letter-spacing:-.02em;position:relative;z-index:1}
+  .highlight-amount .small{font-size:.5em;color:rgba(255,255,255,.7);margin-left:4px}
+  .highlight-sub{font-size:14px;color:rgba(255,255,255,.7);margin-top:8px;position:relative;z-index:1}
+  .data-table{width:100%;margin:20px 0;border-collapse:separate;border-spacing:0;background:var(--bg-card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);font-size:14px}
+  .data-table th,.data-table td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+  .data-table th{background:var(--bg-soft);font-weight:700;font-size:12px;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase}
+  .data-table tr:last-child td{border-bottom:none}
+  .data-table td:nth-child(2),.data-table td:nth-child(3){text-align:right;font-weight:600}
+  .tip-box{background:#E5F3EC;border-left:3px solid var(--green);padding:16px 18px;border-radius:8px;margin:20px 0;font-size:14px;color:var(--ink)}
+  .tip-box strong{color:var(--ink)}
+  .cta-box{margin:32px 0;padding:24px 22px;background:var(--accent-soft);border-radius:var(--radius-lg);border:1px solid #F4D5C7;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .cta-text{flex:1;min-width:200px}
+  .cta-title{font-weight:700;color:var(--ink);margin-bottom:4px;font-size:16px}
+  .cta-desc{font-size:13px;color:var(--ink-soft)}
+  .related-articles{margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}
+  .related-title{font-family:'Fraunces',serif;font-size:22px;font-weight:500;margin-bottom:16px}
+  .related-grid{display:grid;grid-template-columns:1fr;gap:12px}
+  .related-card{background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:var(--ink);transition:all .2s;display:block}
+  .related-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .related-card-title{font-weight:700;font-size:15px;margin-bottom:4px}
+  .related-card-desc{font-size:13px;color:var(--ink-mute)}
 </style>
 </head>
 <body>
 <div class="container">
-<header>
-<h1>휴가비·명절상여 비과세 한도</h1>
-<p class="meta">2026년 6월 • 소득세법 기준</p>
-</header>
+  <nav class="nav">
+    <a href="/">메인</a>
+    <span class="sep">/</span>
+    <a href="/blog/">블로그</a>
+    <span class="sep">/</span>
+    <span class="current">비과세 한도</span>
+  </nav>
 
-<div class="content">
-<h2>비과세? 세금을 안 낸다는 뜻</h2>
-<p>급여에서 공제되는 세금은 두 종류입니다:</p>
-<ul>
-<li><strong>과세</strong>: 소득세 + 지방소득세 내야 함 (약 7.5%)</li>
-<li><strong>비과세</strong>: 세금 면제!</li>
-</ul>
+  <article>
+    <div class="article-header">
+      <span class="pill">6월 · 세금</span>
+      <h1>휴가비·명절상여, 세금 안 내는 금액</h1>
+      <div class="meta">
+        <span>2026년 6월</span>
+        <span class="dot"></span>
+        <span>5분 읽음</span>
+      </div>
+    </div>
 
-<div class="highlight">
-<strong>핵심:</strong> 명절상여금과 휴가비는 일정 금액 이하면 세금을 안 내도 됩니다. 이 한도를 꼭 알아야 실수령액이 얼마나 될지 정확히 계산할 수 있어요.
-</div>
+    <p>명절상여금과 휴가비는 <strong>일정 금액 이하면 세금을 내지 않습니다.</strong> 이 한도를 정확히 알고 있으면, 연봉협상할 때도 유리합니다.</p>
 
-<h2>2026년 비과세 한도</h2>
+    <h2>비과세? 세금을 안 낸다는 뜻</h2>
+    <p>급여에서 공제되는 세금은 두 종류입니다:</p>
 
-<table>
-<tr>
-<th>항목</th>
-<th>비과세 한도</th>
-<th>기준</th>
-</tr>
-<tr>
-<td><strong>명절상여금</strong> (설, 추석)</td>
-<td>월 통상임금 × 2배</td>
-<td>연 2회 (설, 추석)</td>
-</tr>
-<tr>
-<td><strong>휴가비</strong> (여름휴가 등)</td>
-<td>월 통상임금 × 1배</td>
-<td>연 1회</td>
-</tr>
-<tr>
-<td><strong>차등 지급 시</strong></td>
-<td>호봉별로 다름</td>
-<td>고르게 배분</td>
-</tr>
-</table>
+    <ul>
+      <li><strong>과세:</strong> 소득세 + 지방소득세 내야 함 (약 7.5%)</li>
+      <li><strong>비과세:</strong> 세금 완전 면제!</li>
+    </ul>
 
-<h2>예시로 계산해보기</h2>
+    <h2>2026년 비과세 한도</h2>
 
-<div class="calculator">
-<h3>상황 1: 기본급 250만 원</h3>
-<p><strong>명절상여금 (설)</strong></p>
-<ul>
-<li>통상임금: 250만 원</li>
-<li>비과세 한도: 250만 × 2배 = <strong style="color: #FF9500;">500만 원</strong></li>
-<li>회사에서 500만 원 줌 → <strong>세금 0원</strong> ✅</li>
-<li>회사에서 600만 원 줌 → 100만 원만 과세 (약 7.5만 원 세금)</li>
-</ul>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>비과세 한도</th>
+          <th>기준</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>명절상여금</strong></td>
+          <td>월 통상임금 × 2배</td>
+          <td>설, 추석 (연 2회)</td>
+        </tr>
+        <tr>
+          <td><strong>휴가비</strong></td>
+          <td>월 통상임금 × 1배</td>
+          <td>여름휴가 등 (연 1회)</td>
+        </tr>
+      </tbody>
+    </table>
 
-<p style="margin-top: 20px;"><strong>휴가비 (여름)</strong></p>
-<ul>
-<li>통상임금: 250만 원</li>
-<li>비과세 한도: 250만 × 1배 = <strong style="color: #FF9500;">250만 원</strong></li>
-<li>회사에서 250만 원 줌 → <strong>세금 0원</strong> ✅</li>
-<li>회사에서 300만 원 줌 → 50만 원만 과세 (약 3.7만 원 세금)</li>
-</ul>
-</div>
+    <div class="highlight-box">
+      <div class="highlight-label">핵심</div>
+      <div class="highlight-sub">통상임금을 기준으로 계산됩니다. 기본급 ≠ 통상임금인 점 주의!</div>
+    </div>
 
-<h2>호봉별 차등 지급이라면?</h2>
-<p>신입과 과장의 통상임금이 다를 때를 말해요.</p>
+    <h2>예시로 계산해보기</h2>
 
-<div class="calculator">
-<h3>예시: 신입 200만, 과장 300만</h3>
-<p><strong>명절상여금 500만 원을 2명에게 배분</strong></p>
-<ul>
-<li>신입: 200만 × 2배 = <strong style="color: #FF9500;">400만 원까지 비과세</strong> → 250만 원 받음 = 세금 0</li>
-<li>과장: 300만 × 2배 = <strong style="color: #FF9500;">600만 원까지 비과세</strong> → 250만 원 받음 = 세금 0</li>
-</ul>
-<p><strong>결과:</strong> 둘 다 비과세 혜택을 받아요. 차등지급이 손해는 아니에요!</p>
-</div>
+    <h3>상황: 월급 250만 원</h3>
 
-<h2>초과분은 어떻게 과세될까?</h2>
-<p>비과세 한도를 넘으면 초과분에 대해 소득세를 내야 합니다.</p>
+    <div class="highlight-box">
+      <div class="highlight-label">설 상여금</div>
+      <div class="highlight-amount">500만 원<span class="small">까지 비과세</span></div>
+      <div class="highlight-sub">250만 × 2배 = 500만 원</div>
+    </div>
 
-<table>
-<tr>
-<th>받은 금액</th>
-<th>비과세</th>
-<th>과세</th>
-<th>세금 (약 7.5%)</th>
-</tr>
-<tr>
-<td>명절상여 500만</td>
-<td>500만</td>
-<td>0원</td>
-<td>0원</td>
-</tr>
-<tr>
-<td>명절상여 600만</td>
-<td>500만</td>
-<td>100만</td>
-<td>약 7.5만</td>
-</tr>
-<tr>
-<td>명절상여 1000만</td>
-<td>500만</td>
-<td>500만</td>
-<td>약 37.5만</td>
-</tr>
-</table>
+    <p>회사에서 <strong>500만 원을 주면 세금 0원</strong> ✅</p>
+    <p>회사에서 <strong>600만 원을 주면 100만 원 과세</strong> → 약 7.5만 원 세금</p>
 
-<h2>주의: 통상임금을 정확히 확인하세요</h2>
-<p>비과세 한도는 "월 통상임금"을 기준으로 합니다. 기본급 ≠ 통상임금이에요.</p>
+    <div class="highlight-box">
+      <div class="highlight-label">여름휴가비</div>
+      <div class="highlight-amount">250만 원<span class="small">까지 비과세</span></div>
+      <div class="highlight-sub">250만 × 1배 = 250만 원</div>
+    </div>
 
-<p><strong>통상임금에 포함되는 것:</strong></p>
-<ul>
-<li>✅ 기본급</li>
-<li>✅ 직책수당, 근속수당, 기술수당 등 정기적 수당</li>
-<li>❌ 특별상여금 (명절상여는 여기 아님)</li>
-<li>❌ 복리후생비 (식대, 교통비 등)</li>
-</ul>
+    <p>회사에서 <strong>250만 원을 주면 세금 0원</strong> ✅</p>
+    <p>회사에서 <strong>300만 원을 주면 50만 원 과세</strong> → 약 3.7만 원 세금</p>
 
-<p>명세서의 "통상임금" 항목을 확인하세요!</p>
+    <h2>호봉별 차등 지급이라면?</h2>
+    <p>신입과 과장의 통상임금이 다를 때도 각각 비과세 한도가 적용됩니다.</p>
 
-<h2>연말정산 때 비과세 소득 신고</h2>
-<p>명절상여금과 휴가비는 연말정산 때 이미 비과세로 처리되어 있어요. 별도로 신고할 필요는 없습니다.</p>
+    <p><strong>예: 신입 200만, 과장 300만</strong></p>
+    <ul>
+      <li>신입: 200만 × 2배 = <strong>400만 원</strong>까지 비과세</li>
+      <li>과장: 300만 × 2배 = <strong>600만 원</strong>까지 비과세</li>
+    </ul>
 
-<p>다만 이직했다면, 새 회사와 이전 회사에서 받은 비과세 금액을 확인해서 중복이 없는지 봐야 해요.</p>
+    <p>각각의 한도가 있으므로 차등지급이 손해는 아닙니다.</p>
 
-<h2>결론</h2>
-<p>명절상여와 휴가비는 생각보다 큰 금액이 비과세로 처리돼요. 통상임금을 정확히 알고 있으면, 실수령액을 더 정확히 예측할 수 있습니다.</p>
+    <h2>초과분은 어떻게 과세될까?</h2>
 
-</div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>받은 금액</th>
+          <th>비과세</th>
+          <th>과세</th>
+          <th>세금 (약 7.5%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>명절상여 500만</td>
+          <td>500만</td>
+          <td>0원</td>
+          <td>0원</td>
+        </tr>
+        <tr>
+          <td>명절상여 600만</td>
+          <td>500만</td>
+          <td>100만</td>
+          <td>약 7.5만</td>
+        </tr>
+        <tr>
+          <td>명절상여 1000만</td>
+          <td>500만</td>
+          <td>500만</td>
+          <td>약 37.5만</td>
+        </tr>
+      </tbody>
+    </table>
 
-<footer>
-<p>이 정보는 2026년 소득세법 기준입니다. 개인의 상황에 따라 다를 수 있으니 필요시 세무서에 문의하세요.</p>
-<p><a href="/">메인으로 돌아가기</a></p>
-</footer>
+    <div class="tip-box">
+      <strong>💡 팁:</strong> 초과분도 과세되지만, 기본 비과세 부분은 100% 가져갑니다. 많이 받는 것이 손해는 아니에요!
+    </div>
+
+    <h2>통상임금을 정확히 확인하세요</h2>
+    <p>비과세 한도는 "<strong>월 통상임금</strong>" 기준입니다. 기본급과는 다릅니다.</p>
+
+    <h3>통상임금에 포함되는 것</h3>
+    <ul>
+      <li>✅ 기본급</li>
+      <li>✅ 직책수당, 근속수당, 기술수당 등 정기적 수당</li>
+      <li>❌ 특별상여금</li>
+      <li>❌ 식대, 교통비 등 복리후생비</li>
+    </ul>
+
+    <p>명세서의 "통상임금" 항목을 꼭 확인하세요!</p>
+
+    <h2>연말정산 때는?</h2>
+    <p>명절상여금과 휴가비는 이미 비과세로 처리되어 있으므로 별도로 신고할 필요가 없습니다.</p>
+
+    <p>다만 <strong>이직했다면</strong>, 이전 회사에서 받은 비과세 금액을 확인해서 중복이 없는지 봐야 합니다.</p>
+
+    <h2>결론</h2>
+    <p>명절상여와 휴가비는 실수령액에 큰 영향을 미칩니다. 통상임금을 정확히 알고 있으면 한 번에 실수령액을 계산할 수 있습니다.</p>
+
+    <div class="cta-box">
+      <div class="cta-text">
+        <div class="cta-title">명절상여까지 포함해 계산하고 싶으신가요?</div>
+        <div class="cta-desc">연봉으로 명절상여, 휴가비, 세금까지 한눈에 계산합니다.</div>
+      </div>
+      <a href="/tools/salary" class="cta-btn">계산기 →</a>
+    </div>
+
+    <div class="related-articles">
+      <h3 class="related-title">관련 글</h3>
+      <div class="related-grid">
+        <a href="/blog/global-income-tax-2026" class="related-card">
+          <div class="related-card-title">종합소득세 신고, 누가 해야 할까?</div>
+          <div class="related-card-desc">부업, 프리랜서라면 꼭 읽으세요</div>
+        </a>
+        <a href="/blog/tax-refund-check" class="related-card">
+          <div class="related-card-title">연말정산 환급금 조회하기</div>
+          <div class="related-card-desc">내가 받을 환급금은 얼마일까?</div>
+        </a>
+      </div>
+    </div>
+  </article>
 </div>
 </body>
 </html>
