@@ -309,28 +309,7 @@ footer a:hover{color:var(--accent)}
 <body>
 
 <!-- Top bar -->
-<header class="topbar">
-  <div class="topbar-inner">
-    <a class="brand" href="/">
-      <span class="brand-logo">₩</span>
-      <span class="brand-name">월급<em>플러스</em></span>
-    </a>
-    <nav class="topnav" id="topnav">
-      <a href="/" class="active">실수령액</a>
-      <a href="/tools/salary-table.html">연봉표</a>
-      <a href="/tools/median-income.html">중위소득</a>
-      <a href="/tools/severance.html">퇴직금</a>
-      <a href="/tools/hourly.html">시급</a>
-      <a href="/tools/insurance.html">4대보험</a>
-      <a href="/tools/unemployment.html">실업급여</a>
-      <a href="/tools/loan.html">대출</a>
-      <a href="/blog/">블로그</a>
-    </nav>
-    <button class="topnav-toggle" onclick="document.getElementById('topnav').classList.toggle('open')">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-  </div>
-</header>
+<div id="site-nav"></div>
 
 <!-- Hero -->
 <section class="hero-section">
@@ -781,5 +760,6 @@ calc();
   }
 })();
 </script>
+<script src="/header.js" defer></script>
 </body>
 </html>

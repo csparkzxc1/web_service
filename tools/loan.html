@@ -186,27 +186,7 @@ footer a{color:var(--ink-soft);text-decoration:none;margin:0 6px}
 </head>
 <body>
 
-<header class="topbar">
-  <div class="topbar-inner">
-    <a class="brand" href="/">
-      <span class="brand-logo">₩</span>
-      <span class="brand-name">월급<em>플러스</em></span>
-    </a>
-    <nav class="topnav" id="topnav">
-      <a href="/tools/salary">실수령액</a>
-      <a href="/tools/salary-table">연봉표</a>
-      <a href="/tools/severance">퇴직금</a>
-      <a href="/tools/insurance">4대보험</a>
-      <a href="/tools/unemployment">실업급여</a>
-      <a href="/tools/loan" class="active">대출</a>
-      <a href="/tools/">전체도구</a>
-      <a href="/blog/">블로그</a>
-    </nav>
-    <button class="topnav-toggle" onclick="document.getElementById('topnav').classList.toggle('open')" aria-label="메뉴 열기">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-  </div>
-</header>
+<div id="site-nav"></div>
 
 <div class="container">
 
@@ -835,5 +815,6 @@ document.querySelectorAll('input').forEach(input => {
 });
 </script>
 
+<script src="/header.js" defer></script>
 </body>
 </html>
